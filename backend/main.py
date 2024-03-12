@@ -1,8 +1,7 @@
 import uvicorn
-
-
 from fastapi import FastAPI
 from route_produtos import router as produto_router
+from route_usuarios import router as usuarios_router
 
 
 app = FastAPI()
@@ -17,6 +16,7 @@ def health_check():
     return True
 
 app.include_router(produto_router)
+app.include_router(usuarios_router)
 
 
 if __name__ == "__main__":
